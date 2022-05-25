@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block add_css %}
+    <link rel="stylesheet" href="{% static 'movie_app/css/ul.css' %}">
+{% endblock %}
+
+{% block title %}
+    Все фильмы
+{% endblock %}
+
+{% block content %}
+    {% include 'includes/navbar.html' %}
+    <ul>
+    {% for movie in movies %}
+        <li><a href="{{ movie.get_url }}"> {{ movie.movie_title|capfirst }}</a></li>
+    {% endfor %}
+    </ul>
+{% endblock %}

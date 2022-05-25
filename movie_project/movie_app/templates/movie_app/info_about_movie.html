@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    {{ movie.movie_title|upper}}
+{% endblock %}
+
+{% block content %}
+    <h3>Название фильма - {{ movie.movie_title }}</h3>
+    <h3>Рейтинг - {{ movie.rating }}</h3>
+    <hr>
+    <h3>Автор: <a href="{% url 'info-about-director' movie.director.slug %}">{{ movie.director }}</a></h3>
+    <hr>
+    <h3>Актеры:
+        <ul>
+            {% for actor in movie.actors.all %}
+                <li><a href="{% url 'info-about-actor' actor.slug %}">{{ actor }}</a></li>
+            {% endfor %}
+        </ul>
+    </h3>
+{% endblock %}
+

@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block css_add %}
+    <link rel="stylesheet" href="{% static 'feedback/css/feed.css' %}">
+{% endblock %}
+
+{% block title %}
+    Все отзывы
+{% endblock %}
+
+{% block content %}
+    {% for feed in feedback %}
+    <a href="{% url 'detail_feedback' feed.id%}">
+        <div class="feedback">
+            Имя - {{ feed.name }}<br>
+            Фамилия - {{ feed.surname }}<br>
+            Рейтинг - {{ feed.rating }}<br>
+        </div>
+    </a>
+    {% endfor %}
+{% endblock %}

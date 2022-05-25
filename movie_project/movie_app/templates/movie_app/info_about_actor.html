@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    {{ actor.first_name }}
+{% endblock %}
+
+{% block content %}
+    <h3>Имя - {{ actor.first_name }}</h3>
+    <h3>Фамилия - {{ actor.last_name }}</h3>
+    <h3>Пол - {{ actor.gender }}</h3>
+{% endblock %}

@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block css_add %}
+    <link rel="stylesheet" href="{% static 'feedback/css/detail_feedback.css' %}">
+{% endblock %}
+
+{% block title %}
+    Детальный обзор
+{% endblock %}
+
+{% block content %}
+    <div class="detail_feedback">
+        <p>
+            {{ feedback.name }}<br>
+            {{ feedback.surname }}<br>
+            {{ feedback.feedback }}<br>
+            {{ feedback.rating }}
+        </p>
+    </div>
+{% endblock %}

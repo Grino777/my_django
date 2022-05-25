@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    Directors
+{% endblock %}
+
+{% block content %}
+    <ul>
+    {% for director in directors %}
+        <li><a href="{% url 'info-about-director' director.get_url %}">{{ director|capfirst }}</a></li>
+    {% endfor %}
+    <ul>
+
+{% endblock %}

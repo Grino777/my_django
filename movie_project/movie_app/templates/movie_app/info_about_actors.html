@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    Актеры
+{% endblock %}
+
+
+{% block content %}
+{% for actor in actors%}
+    <ul>
+        <li><a href="{% url 'info-about-actor' actor.slug %}">{{ actor|capfirst }}</a></li>
+    </ul>
+{% endfor %}
+{% endblock %}
+
