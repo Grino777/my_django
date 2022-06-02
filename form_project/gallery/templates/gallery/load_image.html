@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block css_add %}
+    <link rel="stylesheet" href="{% static 'feedback/css/forms.css' %}">
+{% endblock %}
+
+
+{% block title %}
+    Страница отзывов
+{% endblock %}
+{% block content %}
+    <h2>Загрузите свое изображение</h2>
+    <form action="" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+
+        <input type="file" name="image">
+        <button type="submit">Загрузить</button>
+    </form>
+{% endblock %}

@@ -11,13 +11,18 @@
 {% endblock %}
 
 {% block content %}
+    <ol>
     {% for feed in feedback %}
-    <a href="{% url 'detail_feedback' feed.id%}">
-        <div class="feedback">
-            Имя - {{ feed.name }}<br>
-            Фамилия - {{ feed.surname }}<br>
-            Рейтинг - {{ feed.rating }}<br>
-        </div>
-    </a>
+        <li>
+            <a href="{% url 'detail_feedback' feed.id%}">
+                <div class="feedback">
+                    Имя - {{ feed.name }}<br>
+                    Фамилия - {{ feed.surname }}<br>
+                    Рейтинг - {{ feed.rating }}<br>
+                    ID - {{ feed.id }}<br>
+                </div>
+            </a>
+        </li>
     {% endfor %}
+    </ol>
 {% endblock %}
