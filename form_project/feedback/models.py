@@ -8,7 +8,7 @@ class Feedback(models.Model):
         verbose_name = 'Отзывы'
         verbose_name_plural = 'Отзывы'
         ordering = ['name']
-    name = models.CharField(max_length=10, validators=[MinLengthValidator(3)])
+    name = models.CharField(max_length=20, validators=[MinLengthValidator(3)])
     surname = models.CharField(max_length=60, validators=[MinLengthValidator(3)])
     feedback = models.TextField()
     rating = models.PositiveIntegerField(validators=[MinValueValidator(1), MaxValueValidator(5)])
